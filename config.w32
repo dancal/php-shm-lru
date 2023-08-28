@@ -1,0 +1,7 @@
+ARG_ENABLE('php_boost_ipc', 'php_boost_ipc support', 'no');
+
+if (PHP_PHP_BOOST_IPC != 'no') {
+	AC_DEFINE('HAVE_PHP_BOOST_IPC', 1, 'php_boost_ipc support enabled');
+
+	EXTENSION('php_boost_ipc', 'php_boost_ipc.c', null, '/DZEND_ENABLE_STATIC_TSRMLS_CACHE=1');
+}
